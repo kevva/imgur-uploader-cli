@@ -22,7 +22,7 @@ imgurUploader(fs.readFileSync('cat.jpg'), function (err, res) {
 	{
 		id: 'OB74hEa',
 		link: 'http://i.imgur.com/jbhDywa.png',
-		datetime: 1432396824,
+		date: Sun May 24 2015 00:02:41 GMT+0200 (CEST),
 		type: 'image/png',
 		...
 	}
