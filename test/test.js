@@ -6,11 +6,12 @@ var imgurUploader = require('../');
 var buf = fs.readFileSync(path.join(__dirname, 'fixtures/test.png'));
 
 test(function (t) {
-	t.plan(3);
+	t.plan(4);
 
 	imgurUploader(buf, function (err, res) {
 		t.assert(!err, err);
 		t.assert(res, res);
-		t.assert(res.data.type === 'image/png', res.data.type);
+		t.assert(res.type === 'image/png', res.type);
+		t.assert(!res.title);
 	});
 });

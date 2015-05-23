@@ -20,15 +20,11 @@ imgurUploader(fs.readFileSync('cat.jpg'), function (err, res) {
 	console.log(res);
 	/*
 	{
-		data: {
-			id: 'OB74hEa',
-			link: 'http://i.imgur.com/jbhDywa.png',
-			title: null,
-			description: null,
-			datetime: 1432396824,
-			type: 'image/png',
-			...
-		}
+		id: 'OB74hEa',
+		link: 'http://i.imgur.com/jbhDywa.png',
+		datetime: 1432396824,
+		type: 'image/png',
+		...
 	}
 });
 ```
