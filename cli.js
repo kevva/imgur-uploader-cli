@@ -42,4 +42,3 @@ if (cli.input.length) {
 
 	process.stdin.pipe(stream);
 }
-
