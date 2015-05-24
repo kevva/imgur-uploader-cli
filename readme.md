@@ -21,11 +21,12 @@ imgurUploader(fs.readFileSync('cat.jpg'), function (err, res) {
 	/*
 	{
 		id: 'OB74hEa',
-		link: 'http://i.imgur.com/jbhDywa.png',
+		link: 'http://i.imgur.com/jbhDywa.jpg',
 		date: Sun May 24 2015 00:02:41 GMT+0200 (CEST),
-		type: 'image/png',
+		type: 'image/jpg',
 		...
 	}
+	*/
 });
 
 var stream = imgurUploader.stream();
@@ -35,9 +36,9 @@ stream.on('upload', function (res) {
 	/*
 	{
 		id: 'OB74hEa',
-		link: 'http://i.imgur.com/jbhDywa.png',
+		link: 'http://i.imgur.com/jbhDywa.jpg',
 		date: Sun May 24 2015 00:02:41 GMT+0200 (CEST),
-		type: 'image/png',
+		type: 'image/jpg',
 		...
 	}
 	*/
