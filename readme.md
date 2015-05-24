@@ -27,6 +27,23 @@ imgurUploader(fs.readFileSync('cat.jpg'), function (err, res) {
 		...
 	}
 });
+
+var stream = imgurUploader.stream();
+
+stream.on('upload', function (res) {
+	console.log(res);
+	/*
+	{
+		id: 'OB74hEa',
+		link: 'http://i.imgur.com/jbhDywa.png',
+		date: Sun May 24 2015 00:02:41 GMT+0200 (CEST),
+		type: 'image/png',
+		...
+	}
+	*/
+});
+
+stream.end(fs.readFileSync('cat.jpg'));
 ```
 
 

@@ -15,3 +15,17 @@ test(function (t) {
 		t.assert(!res.title);
 	});
 });
+
+test(function (t) {
+	t.plan(3);
+
+	var stream = imgurUploader.stream();
+
+	stream.on('upload', function (res) {
+		t.assert(res, res);
+		t.assert(res.type === 'image/png', res.type);
+		t.assert(!res.title);
+	});
+
+	stream.end(buf);
+});
