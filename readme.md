@@ -53,6 +53,21 @@ fs.createReadStream('cat.jpg').pipe(stream);
 ```
 
 
+## CLI
+
+```
+$ npm install --global imgur-uploader
+```
+
+```
+$ imgur-uploader --help
+
+  Example
+    $ imgur-uploader unicorn.png
+    $ cat unicorn.png | imgur-uploader
+```
+
+
 ## License
 
 MIT © [Kevin Martensson](http://github.com/kevva)
