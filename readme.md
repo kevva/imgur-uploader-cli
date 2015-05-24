@@ -28,8 +28,13 @@ imgurUploader(fs.readFileSync('cat.jpg'), function (err, res) {
 	}
 	*/
 });
+```
 
-var stream = imgurUploader.stream();
+You can also use the streaming interface like below:
+
+```js
+var fs = require('fs');
+var stream = require('imgur-uploader').stream();
 
 stream.on('upload', function (res) {
 	console.log(res);
@@ -44,7 +49,7 @@ stream.on('upload', function (res) {
 	*/
 });
 
-stream.end(fs.readFileSync('cat.jpg'));
+fs.createReadStream('cat.jpg').pipe(stream);
 ```
 
 
