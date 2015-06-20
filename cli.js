@@ -9,7 +9,7 @@ var cli = meow({
 		'Example',
 		'  $ imgur-uploader unicorn.png',
 		'  $ cat unicorn.png | imgur-uploader'
-	].join('\n')
+	]
 });
 
 if (!cli.input.length && process.stdin.isTTY) {
