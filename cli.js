@@ -2,7 +2,7 @@
 'use strict';
 var fs = require('fs');
 var meow = require('meow');
-var imgurUploader = require('./');
+var imgurUploader = require('imgur-uploader');
 
 var cli = meow({
 	help: [
