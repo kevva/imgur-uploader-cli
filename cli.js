@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 'use strict';
-var fs = require('fs');
-var meow = require('meow');
-var imgurUploader = require('imgur-uploader');
+const fs = require('fs');
+const meow = require('meow');
+const imgurUploader = require('imgur-uploader');
 
-var cli = meow({
-	help: [
-		'Example',
-		'  $ imgur-uploader unicorn.png',
-		'  $ cat unicorn.png | imgur-uploader'
-	]
-});
+const cli = meow(`
+	Example
+	  $ imgur-uploader unicorn.png
+	  $ cat unicorn.png | imgur-uploader
+`);
 
 if (!cli.input.length && process.stdin.isTTY) {
 	console.error('Expected an image');
@@ -18,22 +16,16 @@ if (!cli.input.length && process.stdin.isTTY) {
 }
 
 if (cli.input.length) {
-	fs.readFile(cli.input[0], function (err, buf) {
+	fs.readFile(cli.input[0], (err, buf) => {
 		if (err) {
 			console.error(err.message);
 			process.exit(1);
 		}
 
-		imgurUploader(buf).then(function (res) {
-			console.log(res.link);
-		});
+		imgurUploader(buf).then(res => console.log(res.link));
 	});
 } else {
-	var stream = imgurUploader.stream();
-
-	stream.on('upload', function (res) {
-		process.stdout.write(res.link);
-	});
-
+	const stream = imgurUploader.stream();
+	stream.on('upload', res => process.stdout.write(res.link));
 	process.stdin.pipe(stream);
 }

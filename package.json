@@ -13,7 +13,7 @@
     "imgur-uploader": "cli.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "node test.js"
