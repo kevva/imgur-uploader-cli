@@ -16,7 +16,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "ava"
+    "test": "xo && ava"
   },
   "files": [
     "cli.js"
@@ -37,6 +37,10 @@
   },
   "devDependencies": {
     "ava": "*",
-    "pify": "^2.2.0"
+    "pify": "^2.2.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
