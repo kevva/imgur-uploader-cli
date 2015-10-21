@@ -3,6 +3,7 @@
 const fs = require('fs');
 const meow = require('meow');
 const imgurUploader = require('imgur-uploader');
+const pify = require('pify');
 
 const cli = meow(`
 	Example
@@ -16,12 +17,7 @@ if (!cli.input.length && process.stdin.isTTY) {
 }
 
 if (cli.input.length) {
-	fs.readFile(cli.input[0], (err, buf) => {
-		if (err) {
-			console.error(err.message);
-			process.exit(1);
-		}
-
+	pify(fs.readFile)(cli.input[0]).then(buf => {
 		imgurUploader(buf).then(res => console.log(res.link));
 	});
 } else {
