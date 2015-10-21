@@ -24,12 +24,7 @@ if (cli.input.length) {
 			process.exit(1);
 		}
 
-		imgurUploader(buf, function (err, res) {
-			if (err) {
-				console.error(err.message);
-				process.exit(1);
-			}
-
+		imgurUploader(buf).then(function (res) {
 			console.log(res.link);
 		});
 	});
