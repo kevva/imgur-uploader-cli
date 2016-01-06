@@ -2,8 +2,6 @@
 
 > Upload images to [imgur](http://imgur.com)
 
-*See [imgur-uploader](https://github.com/kevva/imgur-uploader) for the programmatic API and issue tracker.*
-
 
 ## Install
 
@@ -21,6 +19,11 @@ $ imgur-uploader --help
     $ imgur-uploader unicorn.png
     $ cat unicorn.png | imgur-uploader
 ```
+
+
+## Related
+
+* [imgur-uploader](https://github.com/kevva/imgur-uploader) - API for this module
 
 
 ## License

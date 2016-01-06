@@ -37,10 +37,7 @@
   },
   "devDependencies": {
     "ava": "*",
-    "pify": "^2.2.0",
+    "execa": "^0.1.1",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }
