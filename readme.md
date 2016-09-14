@@ -16,7 +16,7 @@ $ npm install --global imgur-uploader-cli
 $ imgur-uploader --help
 
   Example
-    $ imgur-uploader unicorn.png
+    $ imgur-uploader unicorn.png --title 'My fantastic unicorn'
     $ cat unicorn.png | imgur-uploader
 ```
 

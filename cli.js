@@ -7,17 +7,17 @@ const pify = require('pify');
 
 const cli = meow(`
 	Example
-	  $ imgur-uploader unicorn.png
+	  $ imgur-uploader unicorn.png --title 'My fantastic unicorn'
 	  $ cat unicorn.png | imgur-uploader
 `);
 
-if (!cli.input.length && process.stdin.isTTY) {
+if (cli.input.length === 0 && process.stdin.isTTY) {
 	console.error('Expected an image');
 	process.exit(1);
 }
 
 if (cli.input.length) {
-	pify(fs.readFile)(cli.input[0]).then(buf => {
+	pify(fs.readFile)(cli.input[0], cli.flags).then(buf => {
 		imgurUploader(buf).then(res => console.log(res.link));
 	});
 } else {

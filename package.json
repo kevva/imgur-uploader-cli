@@ -31,7 +31,7 @@
     "upload"
   ],
   "dependencies": {
-    "imgur-uploader": "^3.0.0",
+    "imgur-uploader": "^4.1.0",
     "meow": "^3.3.0",
     "pify": "^2.2.0"
   },
